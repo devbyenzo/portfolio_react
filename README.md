@@ -2,8 +2,6 @@
 
 Um portfólio moderno e minimalista desenvolvido com React, Vite, TailwindCSS e Framer Motion.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=ENZWZZ+Portfolio)
-
 ## ✨ Características
 
 - 🎨 **Design Moderno**: Interface futurista com tema roxo neon e preto
