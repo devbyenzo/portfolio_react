@@ -34,10 +34,14 @@ const Loading = ({ onComplete }: { onComplete: () => void }) => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8"
         >
-          <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-white font-bold text-2xl">E</span>
-          </div>
-          <h1 className="text-2xl font-bold tracking-widest text-white">ENZWZZ</h1>
+          <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
+          <img
+            className="w-full h-full bg-cover bg-center"
+            src="https://avatars.githubusercontent.com/u/140750940?s=400&u=8447cff8de9226e9a478d3e95099fd7aa31db756&v=4"
+            alt="Enzo Pietrantonio"
+           />
+        </div>
+          <h1 className="text-2xl font-bold tracking-widest text-white">Enzo Pietrantonio</h1>
         </motion.div>
 
         {/* Progress Bar */}

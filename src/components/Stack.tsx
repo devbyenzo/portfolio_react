@@ -16,10 +16,10 @@ const Stack = () => {
       category: 'Frontend',
       icon: Globe,
       items: [
-        { name: 'HTML', level: 'Avançado' },
-        { name: 'CSS', level: 'Avançado' },
+        { name: 'React', level: 'Intermediário' },
+        { name: 'Tailwind CSS', level: 'Intermediário' },
         { name: 'JavaScript', level: 'Intermediário' },
-        { name: 'React', level: 'Básico' },
+        { name: 'Responsive Design', level: 'Intermediário' },
       ],
     },
     {
@@ -27,7 +27,9 @@ const Stack = () => {
       icon: Server,
       items: [
         { name: 'Python', level: 'Avançado' },
-        { name: 'C#', level: 'Básico' },
+        { name: 'FastAPI', level: 'Intermediário' },
+        { name: 'REST APIs', level: 'Intermediário' },
+        { name: 'SQL', level: 'Intermediário' },
       ],
     },
     {
@@ -35,8 +37,8 @@ const Stack = () => {
       icon: Smartphone,
       items: [
         { name: 'Electron', level: 'Básico' },
-        { name: 'Tkinter', level: 'Avançado' },
-        { name: 'CustomTkinter', level: 'Avançado' },
+        { name: 'Tkinter', level: 'Intermediário' },
+        { name: 'CustomTkinter ', level:  'Intermediário' },
         { name: 'PyQt', level: 'Básico' },
       ],
     },
@@ -44,9 +46,9 @@ const Stack = () => {
       category: 'Ferramentas',
       icon: GitBranch,
       items: [
-        { name: 'Git', level: 'Avançado' },
+        { name: 'Git & GitHub', level: 'Intermediário' },
         { name: 'VS Code', level: 'Avançado' },
-        { name: 'Figma', level: 'Intermediário' },
+        { name: 'Figma', level: 'Básico' },
       ],
     },
   ];

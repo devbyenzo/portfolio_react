@@ -28,9 +28,13 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-3"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
-            </div>
+        <div className="w-10 h-10 rounded-full overflow-hidden">
+        <img
+          src="https://avatars.githubusercontent.com/u/140750940?s=400"
+          className="w-full h-full object-cover"
+          alt="Enzo"
+        />
+        </div>
             <span className="text-xl font-bold tracking-widest">Enzo Pietrantonio</span>
           </motion.div>
 
@@ -78,18 +82,18 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <span>Feito com</span>
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Heart className="text-red-500 fill-current" size={16} />
-            </motion.div>
-            <span>e muito</span>
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold">
-              ☕ café
-            </span>
-          </div>
+       <span>Feito com</span>
+          <motion.div
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <Heart className="text-red-500 fill-current" size={16} />
+        </motion.div>
+          <span>e umas boas doses de</span>
+          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold">
+          café ☕
+          </span>
+        </div>
         </motion.div>
       </div>
     </footer>

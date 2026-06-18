@@ -38,7 +38,8 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="text-purple-400 mb-4 tracking-widest text-sm font-medium"
           >
-            PYTHON DEVELOPER & FRONT-END LEARNER
+            Full-Stack Developer <br />
+            Python • React • FastAPI • PostgreSQL
           </motion.p>
 
           <motion.h1
@@ -52,7 +53,7 @@ const Hero = () => {
             </span>
             <br />
             <span className="text-4xl md:text-5xl font-semibold text-gray-300">
-              Criando experiências digitais incríveis
+              Construindo aplicações web, APIs e soluções digitais.
             </span>
           </motion.h1>
 
@@ -62,8 +63,9 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-gray-400 text-lg leading-relaxed mb-8"
           >
-            Desenvolvedor apaixonado por Python, interfaces modernas e automações.
-            Atualmente explorando o mundo do front-end com React e design systems.
+            Desenvolvedor Full-Stack com foco em Python, React e FastAPI.
+            Experiência no desenvolvimento de aplicações web, APIs e soluções de automação.
+
           </motion.p>
 
           <motion.div
@@ -129,11 +131,13 @@ const Hero = () => {
             <pre className="text-sm text-gray-300 overflow-x-auto relative z-10 font-mono">
 {`const developer = {
   name: "Enzo Pietrantonio",
-  skills: ["Python", "HTML", "CSS", "React", "JS"]
-  passion: "Modern UI/UX",
-  learning: "Computer Engineering",
-  status: "Building amazing things 🚀"
+  role: "Full-Stack Developer",
+  stack: ["Python", "React", "FastAPI", "JavaScript"],
+  focus: "Web Applications & APIs",
+  education: "Computer Engineering Student",
+  status: "Building the next project 🚀"
 }`}
+
             </pre>
 
             {/* Animated cursor */}

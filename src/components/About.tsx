@@ -1,34 +1,38 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Code, Palette, Zap, Target } from 'lucide-react';
+import { Code, Zap, Target, Brain } from 'lucide-react';
 
 const About = () => {
   const [stats, setStats] = useState({
-    projects: 7,
+    projects: 20,
     experience: 2,
-    skills: 0,
-    clients: 0,
+    skills: 8,
+    dedication: 100,
   });
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setStats({
-        projects: 7,
+        projects: 20,
         experience: 2,
         skills: 8,
-        clients: 5,
+        dedication: 100,
       });
     }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
-  const skills = [
-    { name: 'Python', icon: Code, level: 80 },
-    { name: 'React', icon: Code, level: 50 },
-    { name: 'Tailwind CSS', icon: Palette, level: 50 },
-    { name: 'UI Design', icon: Palette, level: 80 },
-  ];
+const skills = [
+    { name: 'Python', icon: Code, level: 85 },
+    { name: 'FastAPI', icon: Code, level: 80 },
+    { name: 'React', icon: Code, level: 70 },
+    { name: 'JavaScript', icon: Code, level: 70 },
+    { name: 'SQL', icon: Code, level: 65 },
+    { name: 'Git & GitHub', icon: Code, level: 65 },
+];
+
+
 
   return (
     <section id="about" className="max-w-6xl mx-auto px-6 py-24">
@@ -67,9 +71,10 @@ const About = () => {
             transition={{ delay: 0.6 }}
             className="text-gray-400 leading-relaxed mb-8 text-lg"
           >
-            Atualmente focado em desenvolvimento com Python, criando automações e aplicações desktop.
-            Também estudo front-end moderno utilizando React, TailwindCSS e princípios de UI/UX design.
-            Acredito que código limpo e interfaces intuitivas fazem a diferença.
+           Atualmente atuo no desenvolvimento de aplicações web, APIs e soluções de automação utilizando Python, FastAPI e React.
+          Tenho experiência na criação de sistemas completos, desde o backend até interfaces modernas e responsivas.
+          Busco desenvolver soluções eficientes, escaláveis e com uma ótima experiência para o usuário.
+
           </motion.p>
 
           {/* Skills */}
@@ -108,7 +113,7 @@ const About = () => {
             { icon: Target, label: 'Projetos', value: stats.projects, suffix: '+' },
             { icon: Code, label: 'Anos de Exp.', value: stats.experience, suffix: '+' },
             { icon: Zap, label: 'Tecnologias', value: stats.skills, suffix: '+' },
-            { icon: Palette, label: 'Clientes', value: stats.clients, suffix: '+' },
+            { icon: Brain, label: 'Dedicação', value: stats.dedication, suffix: '%' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
