@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Github, Instagram, MessageCircle, Send, Mail } from 'lucide-react';
+import { FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,13 +12,13 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -25,62 +26,53 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    {
-      icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com/devbyenzo',
-      color: 'hover:text-gray-300',
-    },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/devbyenzo' },
     {
       icon: Instagram,
       label: 'Instagram',
       href: 'https://instagram.com/enzwq_',
-      color: 'hover:text-pink-400',
     },
-    {
-      icon: MessageCircle,
-      label: 'Number',
-      href: 'tel:+5511975292277',
-      color: 'hover:text-indigo-400',
-    },
+    { icon: MessageCircle, label: 'WhatsApp', href: 'tel:+5511975292277' },
+    { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/devbyenzo/' }
   ];
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-6 py-24">
+    <section id="contact" className="scroll-mt-24 py-16 sm:py-20 lg:py-24">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="mb-10"
       >
-        <p className="text-purple-400 mb-4 tracking-widest text-sm font-medium">
-          CONTATO
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-violet-600">
+          Contato
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold">
-          Vamos{' '}
-          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            trabalhar juntos
+        <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+          Vamos criar algo{' '}
+          <span className="bg-gradient-to-r from-violet-600 to-sky-600 bg-clip-text text-transparent">
+            interessante juntos
           </span>
         </h2>
-        <p className="text-gray-400 mt-4 text-lg">
-          Disponível para freelas, projetos pessoais e oportunidades incríveis
-        </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-16">
-        {/* Contact Form */}
+      <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -12 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
+          className="rounded-[28px] border border-slate-200/80 bg-white/80 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)] sm:p-8"
         >
-          <h3 className="text-2xl font-bold mb-6">Envie uma mensagem</h3>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <h3 className="text-xl font-semibold text-slate-900">
+            Envie uma mensagem
+          </h3>
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label
+                htmlFor="name"
+                className="mb-2 block text-sm font-medium text-slate-700"
+              >
                 Nome
               </label>
               <input
@@ -90,13 +82,15 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-2xl focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 text-white placeholder-gray-500"
+                className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-300 focus:outline-none"
                 placeholder="Seu nome"
               />
             </div>
-
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label
+                htmlFor="email"
+                className="mb-2 block text-sm font-medium text-slate-700"
+              >
                 Email
               </label>
               <input
@@ -106,13 +100,15 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-2xl focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 text-white placeholder-gray-500"
+                className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-300 focus:outline-none"
                 placeholder="seu@email.com"
               />
             </div>
-
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm font-medium text-slate-700"
+              >
                 Mensagem
               </label>
               <textarea
@@ -122,94 +118,71 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-2xl focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 text-white placeholder-gray-500 resize-none"
+                className="w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-300 focus:outline-none"
                 placeholder="Conte-me sobre seu projeto..."
               />
             </div>
-
             <motion.button
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-purple-900 transition-all duration-300 flex items-center justify-center gap-2"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
-              <Send size={20} />
-              Enviar Mensagem
+              <Send size={16} />
+              Enviar mensagem
             </motion.button>
           </form>
         </motion.div>
 
-        {/* Contact Info & Social */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 12 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="rounded-[28px] border border-slate-200/80 bg-gradient-to-br from-violet-50 to-sky-50 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)] sm:p-8"
         >
-          <div>
-            <h3 className="text-2xl font-bold mb-6">Conecte-se comigo</h3>
-            <p className="text-gray-400 mb-8">
-              Estou sempre interessado em novos projetos e oportunidades.
-              Vamos conversar sobre como podemos trabalhar juntos!
-            </p>
-
-            {/* Social Links */}
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-500">
+            Conecte-se
+          </p>
+          <h3 className="mt-3 text-2xl font-semibold text-slate-900">
+            Disponível para projetos, freelas e oportunidades.
+          </h3>
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            Se você quer transformar uma ideia em uma experiência digital
+            moderna, pode falar comigo.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
                 <motion.a
                   key={social.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ y: -2, scale: 1.02 }}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 ${social.color}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
                 >
-                  <social.icon size={24} />
+                  <Icon size={16} />
+                  {social.label}
                 </motion.a>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* Contact Cards */}
-          <div className="space-y-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="p-6 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-purple-500/20 rounded-2xl">
-                  <Mail className="text-purple-400" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-400">enzwzz.dev@gmail.com</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="p-6 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-500/20 rounded-2xl">
-                  <MessageCircle className="text-cyan-400" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold">My Number</h4>
-                  <p className="text-gray-400">+55 (11) 97529-2277</p>
-                </div>
-              </div>
-            </motion.div>
+          <div className="mt-8 space-y-3 rounded-[24px] border border-slate-200/80 bg-white/70 p-5">
+            <div className="flex items-center gap-3">
+              <Mail size={18} className="text-violet-700" />
+              <span className="text-sm text-slate-700">
+                enzwzz.dev@gmail.com
+              </span>
+            </div>
+            <div className="flex items-center gap-3">
+              <MessageCircle size={18} className="text-sky-700" />
+              <span className="text-sm text-slate-700">
+                +55 (11) 97529-2277
+              </span>
+            </div>
           </div>
         </motion.div>
       </div>

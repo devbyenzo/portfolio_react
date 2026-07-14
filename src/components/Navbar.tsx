@@ -1,88 +1,372 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import {
+  Menu,
+  X,
+  Github,
+  Instagram,
+  Mail,
+  Sparkles,
+  Briefcase,
+  GraduationCap,
+} from 'lucide-react';
+import { FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const sections = [
+    { name: 'Início', id: 'hero', icon: Menu },
+    { name: 'Projetos', id: 'projects', icon: Github },
+    { name: 'Experiência', id: 'about', icon: Briefcase },
+    { name: 'Educação', id: 'education', icon: GraduationCap },
+    { name: 'Atividade', id: 'activity', icon: Sparkles },
+    { name: 'Contato', id: 'contact', icon: Mail },
+  ];
+
+  const socials = [
+    {
+      icon: Github,
+      href: 'https://github.com/devbyenzo',
+      label: 'GitHub',
+    },
+    {
+      icon: Instagram,
+      href: 'https://instagram.com/enzwq_',
+      label: 'Instagram',
+    },
+    {
+      icon: FaLinkedin,
+      href: 'https://www.linkedin.com/in/devbyenzo/',
+      label: 'LinkedIn',
+    }
+  ];
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     }
+
     setIsOpen(false);
   };
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 w-full backdrop-blur-md bg-black/50 border-b border-white/10 z-50"
-    >
-      <div className="max-w-6xl mx-auto flex items-center justify-between p-5">
-        <motion.h1
-          whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold tracking-widest text-purple-400 cursor-pointer"
-          onClick={() => scrollToSection('hero')}
-        >
-          ENZWZZ
-        </motion.h1>
+    <>
+      {/* Mobile */}
+      <motion.header
+        className="
+          lg:hidden
+          fixed
+          top-4
+          left-4
+          right-4
+          z-50
 
-        <nav className="hidden md:flex gap-8 text-sm text-gray-300">
-          {[
-            { name: 'Sobre', id: 'about' },
-            { name: 'Projetos', id: 'projects' },
-            { name: 'Stack', id: 'stack' },
-            { name: 'Contato', id: 'contact' },
-          ].map((item) => (
-            <motion.a
-              key={item.id}
-              whileHover={{ scale: 1.1, color: '#a855f7' }}
-              className="hover:text-white transition cursor-pointer"
-              onClick={() => scrollToSection(item.id)}
+          rounded-2xl
+
+          bg-[#212121]
+
+          p-3
+
+          shadow-xl
+        "
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div
+              className="
+                h-8
+                w-8
+                overflow-hidden
+                rounded-full
+              "
             >
-              {item.name}
-            </motion.a>
-          ))}
-        </nav>
+              <img
+                src="https://avatars.githubusercontent.com/u/140750940?s=400"
+                alt="Enzo"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                "
+              />
+            </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+            <p className="text-sm font-semibold text-[#F9F8F0]">ENZO</p>
+          </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10"
-        >
-          <div className="flex flex-col items-center py-5 gap-4">
-            {[
-              { name: 'Sobre', id: 'about' },
-              { name: 'Projetos', id: 'projects' },
-              { name: 'Stack', id: 'stack' },
-              { name: 'Contato', id: 'contact' },
-            ].map((item) => (
-              <a
-                key={item.id}
-                className="text-gray-300 hover:text-white transition cursor-pointer"
-                onClick={() => scrollToSection(item.id)}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="
+              rounded-lg
+              p-2
+
+              text-[#F9F8F0]
+
+              hover:bg-white/10
+
+              transition
+            "
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {sections.map((s) => (
+              <button
+                key={s.id}
+                onClick={() => scrollToSection(s.id)}
+                className="
+                  rounded-full
+
+                  border
+                  border-white/20
+
+                  px-3
+                  py-2
+
+                  text-sm
+
+                  text-[#F9F8F0]
+
+                  hover:bg-white/10
+
+                  transition
+                "
               >
-                {item.name}
-              </a>
+                {s.name}
+              </button>
             ))}
           </div>
-        </motion.div>
-      )}
-    </motion.header>
+        )}
+      </motion.header>
+
+      {/* Desktop Sidebar */}
+      <aside
+        className="
+          hidden
+          lg:flex
+
+          fixed
+
+          left-6
+          top-6
+          bottom-6
+
+          w-64
+
+          flex-col
+
+          rounded-3xl
+
+          bg-[#212121]
+
+          p-6
+
+          text-[#F9F8F0]
+
+          shadow-xl
+
+          z-40
+        "
+      >
+        {/* Perfil */}
+        <div className="mb-8 flex items-center gap-3">
+          <div
+            className="
+              h-10
+              w-10
+
+              overflow-hidden
+
+              rounded-xl
+
+              border
+              border-white/20
+            "
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/140750940?s=400"
+              alt="Enzo"
+              className="
+                h-full
+                w-full
+                object-cover
+              "
+            />
+          </div>
+
+          <div>
+            <p
+              className="
+                text-xs
+                uppercase
+                text-[#F9F8F0]/50
+              "
+            >
+              Informações
+            </p>
+
+            <h2
+              className="
+                text-lg
+                font-semibold
+                text-[#F9F8F0]
+              "
+            >
+              ENZO
+            </h2>
+          </div>
+        </div>
+
+        {/* Navegação */}
+        <nav className="flex-1">
+          <ul className="space-y-2">
+            {sections.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className="
+                    flex
+
+                    w-full
+
+                    items-center
+
+                    gap-3
+
+                    rounded-xl
+
+                    px-3
+
+                    py-2
+
+                    text-sm
+
+                    font-medium
+
+                    text-[#F9F8F0]
+
+                    hover:bg-white/10
+
+                    transition
+                  "
+                >
+                  <item.icon size={16} className="text-[#F9F8F0]/70" />
+
+                  <span>{item.name}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Redes */}
+        <div
+          className="
+            mt-4
+
+            border-t
+
+            border-white/10
+
+            pt-4
+          "
+        >
+          <p
+            className="
+              text-xs
+              uppercase
+              text-[#F9F8F0]/50
+            "
+          >
+            Links
+          </p>
+
+          <div className="mt-3 flex flex-col gap-2">
+            {socials.map((s) => {
+              const Icon = s.icon;
+
+              return (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex
+
+                    items-center
+
+                    gap-3
+
+                    rounded-xl
+
+                    px-3
+
+                    py-2
+
+                    text-sm
+
+                    text-[#F9F8F0]
+
+                    hover:bg-white/10
+
+                    transition
+                  "
+                >
+                  <Icon size={16} className="text-[#F9F8F0]/70" />
+
+                  <span>{s.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Ações */}
+        <div className="mt-6 flex gap-3">
+          <button
+            className="
+              rounded-full
+
+              bg-white/10
+
+              p-2
+
+              hover:bg-white/20
+
+              transition
+            "
+          >
+            ⚙️
+          </button>
+
+          <button
+            className="
+              rounded-full
+
+              bg-white/10
+
+              p-2
+
+              hover:bg-white/20
+
+              transition
+            "
+          >
+            🌐
+          </button>
+        </div>
+      </aside>
+    </>
   );
 };
 

@@ -7,9 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#8b5cf6', // Purple neon
-        secondary: '#000000', // Black
-        accent: '#a855f7', // Lighter purple
+    primary: '#8fa8c9',
+    secondary: '#f8f6f2',
+    accent: '#b39ddb',
+    pastel: {
+    lavender: '#e8def8',
+    blue: '#dcecf7',
+    sage: '#dcebdd',
+    sand: '#f4e7d3',
+  },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

@@ -3,99 +3,268 @@ import { Heart, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/10 bg-black/50 backdrop-blur-sm">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.3) 1px, transparent 0)`,
-          backgroundSize: '30px 30px'
-        }} />
-      </div>
+    <footer
+      className="
+        mt-6
 
-      <div className="relative max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo/Brand */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3"
-          >
-        <div className="w-10 h-10 rounded-full overflow-hidden">
-        <img
-          src="https://avatars.githubusercontent.com/u/140750940?s=400"
-          className="w-full h-full object-cover"
-          alt="Enzo"
-        />
-        </div>
-            <span className="text-xl font-bold tracking-widest">Enzo Pietrantonio</span>
-          </motion.div>
+        rounded-[28px]
 
-          {/* Quote */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center md:text-left"
-          >
-            <p className="text-gray-400 italic mb-2">
-              "Código é poesia digital"
-            </p>
-            <p className="text-sm text-gray-500">
-              Construindo o futuro, uma linha de código por vez
-            </p>
-          </motion.div>
+        border
+        border-black/5
 
-          {/* Back to Top */}
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={scrollToTop}
-            className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 group"
-          >
-            <ArrowUp className="text-gray-400 group-hover:text-purple-400 transition-colors" size={20} />
-          </motion.button>
-        </div>
+        bg-[#FFFFFF]
 
-        {/* Bottom Section */}
+        px-5
+        py-8
+
+        shadow-sm
+
+        sm:px-8
+      "
+    >
+      <div
+        className="
+          flex
+          flex-col
+
+          gap-8
+
+          md:flex-row
+
+          md:items-center
+
+          md:justify-between
+        "
+      >
+        {/* Perfil */}
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4"
+          initial={{
+            opacity: 0,
+            x: -16,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="
+            flex
+            items-center
+            gap-3
+          "
         >
-          <p className="text-gray-500 text-sm">
-            © {currentYear} Enzo Pietrantonio. Todos os direitos reservados.
-          </p>
+          <div
+            className="
+              h-10
+              w-10
 
-          <div className="flex items-center gap-2 text-gray-500 text-sm">
-       <span>Feito com</span>
-          <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <Heart className="text-red-500 fill-current" size={16} />
-        </motion.div>
-          <span>e umas boas doses de</span>
-          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold">
-          café ☕
+              overflow-hidden
+
+              rounded-full
+
+              border
+              border-black/10
+            "
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/140750940?s=400"
+              className="
+                h-full
+                w-full
+                object-cover
+              "
+              alt="Enzo"
+            />
+          </div>
+
+          <span
+            className="
+              text-lg
+
+              font-semibold
+
+              tracking-[0.2em]
+
+              text-[#212121]
+            "
+          >
+            Enzo Pietrantonio
           </span>
-        </div>
         </motion.div>
+
+        {/* Frase */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 16,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="
+            text-center
+
+            text-sm
+
+            text-[#6B6B6B]
+
+            md:text-left
+          "
+        >
+          <p className="italic">“Código é poesia digital”</p>
+
+          <p className="mt-1">
+            Construindo o futuro, uma linha de código por vez.
+          </p>
+        </motion.div>
+
+        {/* Botão topo */}
+
+        <motion.button
+          initial={{
+            opacity: 0,
+            x: 16,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileHover={{
+            scale: 1.05,
+            y: -2,
+          }}
+          whileTap={{
+            scale: 0.95,
+          }}
+          onClick={scrollToTop}
+          className="
+            inline-flex
+
+            items-center
+
+            justify-center
+
+            rounded-full
+
+            border
+            border-black/10
+
+            bg-[#FFFFFF]
+
+            p-3
+
+            text-[#212121]
+
+            transition
+
+            hover:bg-[#F9F8F0]
+          "
+        >
+          <ArrowUp size={18} />
+        </motion.button>
       </div>
+
+      {/* Bottom */}
+
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 16,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.3,
+        }}
+        viewport={{
+          once: true,
+        }}
+        className="
+          mt-8
+
+          flex
+
+          flex-col
+
+          gap-3
+
+          border-t
+
+          border-black/5
+
+          pt-6
+
+          text-sm
+
+          text-[#6B6B6B]
+
+          md:flex-row
+
+          md:items-center
+
+          md:justify-between
+        "
+      >
+        <p>© {currentYear} Enzo Pietrantonio. Todos os direitos reservados.</p>
+
+        <div
+          className="
+            flex
+            items-center
+            gap-2
+          "
+        >
+          <span>Feito com</span>
+
+          <motion.span
+            animate={{
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+            }}
+          >
+            <Heart className="text-[#212121]" size={16} />
+          </motion.span>
+
+          <span>e uma boa dose de café ☕</span>
+        </div>
+      </motion.div>
     </footer>
   );
 };

@@ -1,152 +1,407 @@
 import { motion } from 'framer-motion';
-import { Github, ArrowRight, Code } from 'lucide-react';
+import { ArrowRight, Code2, Github, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     }
   };
 
+  const stack = ['Python', 'React', 'FastAPI', 'PostgreSQL'];
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-purple-500/5 to-transparent blur-3xl" />
-      </div>
+    <section
+      id="hero"
+      className="
+        scroll-mt-24
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.3) 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
+        rounded-[32px]
 
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-10 items-center relative z-10">
+        border
+        border-black/5
+
+        bg-[#FFFFFF]
+
+        px-5
+        py-8
+
+        sm:px-8
+        sm:py-10
+
+        lg:px-10
+        lg:py-14
+      "
+    >
+      <div
+        className="
+        grid
+        items-center
+        gap-8
+
+        lg:grid-cols-[1.1fr_0.9fr]
+      "
+      >
+        {/* Texto */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{
+            opacity: 0,
+            x: -24,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-purple-400 mb-4 tracking-widest text-sm font-medium"
+          <div
+            className="
+            badge-accent
+            inline-flex
+            items-center
+            gap-2
+          "
           >
-            Full-Stack Developer <br />
-            Python • React • FastAPI • PostgreSQL
-          </motion.p>
+            <Sparkles size={14} />
+            Atualmente desenvolvendo um projeto de automação modernoQue e
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-5xl md:text-7xl font-black leading-tight mb-6"
+          <h1
+            className="
+              mt-6
+
+              text-4xl
+
+              font-semibold
+
+              leading-tight
+
+              text-[#212121]
+
+              sm:text-5xl
+
+              lg:text-6xl
+            "
           >
-            <span className="bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
-              Enzo Pietrantonio
-            </span>
+            Eu sou <span className="text-[#212121]">Enzo Pietrantonio</span>
             <br />
-            <span className="text-4xl md:text-5xl font-semibold text-gray-300">
-              Construindo aplicações web, APIs e soluções digitais.
-            </span>
-          </motion.h1>
+            <span
+              className="
+                text-2xl
+                font-medium
+                text-[#6B6B6B]
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="text-gray-400 text-lg leading-relaxed mb-8"
-          >
-            Desenvolvedor Full-Stack com foco em Python, React e FastAPI.
-            Experiência no desenvolvimento de aplicações web, APIs e soluções de automação.
+                sm:text-3xl
 
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex gap-4 flex-wrap"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(139, 92, 246, 0.5)' }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold hover:from-purple-700 hover:to-purple-900 transition-all duration-300 flex items-center gap-2"
+                lg:text-4xl
+              "
             >
-              <Code size={20} />
-              Ver Projetos
-              <ArrowRight size={20} />
+              construindo produtos digitais com foco em clareza, experiência e
+              desempenho.
+            </span>
+          </h1>
+
+          <p
+            className="
+              mt-6
+
+              max-w-2xl
+
+              text-base
+
+              leading-8
+
+              text-[#6B6B6B]
+
+              sm:text-lg
+            "
+          >
+            Desenvolvedor Full-Stack trabalhando com Python, React e FastAPI
+            para criar interfaces elegantes e soluções backend robustas.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <span key={item} className="tech-pill">
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <motion.button
+              whileHover={{
+                scale: 1.02,
+                y: -1,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              onClick={() => scrollToSection('projects')}
+              className="
+                accent-btn
+
+                inline-flex
+
+                items-center
+
+                gap-2
+              "
+            >
+              <Code2 size={18} />
+              Ver projetos
+              <ArrowRight size={18} />
             </motion.button>
 
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{
+                scale: 1.02,
+                y: -1,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
               href="https://github.com/devbyenzo"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+              className="
+                inline-flex
+
+                items-center
+
+                gap-2
+
+                rounded-full
+
+                border
+                border-black/10
+
+                bg-[#FFFFFF]
+
+                px-5
+
+                py-3
+
+                text-sm
+
+                font-semibold
+
+                text-[#212121]
+
+                transition
+
+                hover:bg-[#F9F8F0]
+              "
             >
-              <Github size={20} />
+              <Github size={18} />
               GitHub
             </motion.a>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 rounded-2xl border border-purple-400/50 text-purple-400 hover:bg-purple-400/10 transition-all duration-300"
-            >
-              Contato
-            </motion.button>
-          </motion.div>
+          </div>
         </motion.div>
 
-        {/* Code Card */}
+        {/* Card Projeto */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
-        >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden"
-          >
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-3xl" />
+          initial={{
+            opacity: 0,
+            x: 24,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.15,
+          }}
+          className="
+            rounded-[28px]
 
-            <div className="flex items-center gap-3 mb-8 relative z-10">
-              <div className="w-3 h-3 rounded-full bg-red-400" />
-              <div className="w-3 h-3 rounded-full bg-yellow-400" />
-              <div className="w-3 h-3 rounded-full bg-green-400" />
+            border
+            border-black/5
+
+            bg-[#FFFFFF]
+
+            p-5
+
+            shadow-xl
+          "
+        >
+          <div
+            className="
+            flex
+            items-center
+            justify-between
+          "
+          >
+            <p
+              className="
+              text-sm
+              font-semibold
+              text-[#212121]
+            "
+            >
+              Projeto atual
+            </p>
+
+            <span
+              className="
+                rounded-full
+
+                bg-[#F9F8F0]
+
+                px-3
+
+                py-1
+
+                text-xs
+
+                font-semibold
+
+                uppercase
+
+                tracking-[0.25em]
+
+                text-[#212121]
+              "
+            >
+              Em desenvolvimento
+            </span>
+          </div>
+
+          <h2
+            className="
+              mt-4
+
+              text-2xl
+
+              font-semibold
+
+              text-[#212121]
+            "
+          >
+            Plataforma de automação e gestão
+          </h2>
+
+          <p
+            className="
+              mt-3
+
+              text-sm
+
+              leading-7
+
+              text-[#6B6B6B]
+            "
+          >
+            Uma solução pensada para combinar backend sólido, painel intuitivo e
+            experiência premium para o usuário final.
+          </p>
+
+          <div
+            className="
+              mt-5
+
+              space-y-3
+
+              rounded-[24px]
+
+              border
+
+              border-black/5
+
+              bg-[#F9F8F0]
+
+              p-4
+            "
+          >
+            <div
+              className="
+              flex
+              justify-between
+              text-sm
+              text-[#6B6B6B]
+            "
+            >
+              <span>Foco principal</span>
+
+              <span
+                className="
+                font-semibold
+                text-[#212121]
+              "
+              >
+                UX + arquitetura
+              </span>
             </div>
 
-            <pre className="text-sm text-gray-300 overflow-x-auto relative z-10 font-mono">
-{`const developer = {
-  name: "Enzo Pietrantonio",
-  role: "Full-Stack Developer",
-  stack: ["Python", "React", "FastAPI", "JavaScript"],
-  focus: "Web Applications & APIs",
-  education: "Computer Engineering Student",
-  status: "Building the next project 🚀"
-}`}
+            <div
+              className="
+              flex
+              justify-between
+              text-sm
+              text-[#6B6B6B]
+            "
+            >
+              <span>Stack central</span>
 
+              <span
+                className="
+                font-semibold
+                text-[#212121]
+              "
+              >
+                Python / React
+              </span>
+            </div>
+          </div>
+
+          <div
+            className="
+              mt-5
+
+              rounded-[24px]
+
+              bg-[#212121]
+
+              p-4
+
+              text-[#F9F8F0]
+            "
+          >
+            <p
+              className="
+              text-xs
+              uppercase
+              tracking-[0.3em]
+              opacity-50
+            "
+            >
+              Status
+            </p>
+
+            <pre
+              className="
+              mt-3
+              overflow-x-auto
+              font-mono
+              text-sm
+              leading-7
+            "
+            >
+              {`const currentFocus = {
+  product: "Automation platform",
+  status: "Design + development",
+  nextStep: "Polish experience"
+};`}
             </pre>
-
-            {/* Animated cursor */}
-            <motion.div
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 1, repeat: Infinity }}
-              className="w-2 h-5 bg-purple-400 ml-1 inline-block"
-            />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

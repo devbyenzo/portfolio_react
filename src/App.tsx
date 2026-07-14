@@ -8,15 +8,15 @@ import Stack from './components/Stack';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
+import Education from './components/Education';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -31,53 +31,48 @@ function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="min-h-screen bg-black text-white overflow-x-hidden"
+          className="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.95),_rgba(244,240,250,0.9)_40%,_rgba(236,245,252,0.95))] text-slate-900"
         >
-          {/* Background Elements */}
-          <div className="fixed inset-0 pointer-events-none">
-            {/* Gradient Orbs */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full animate-pulse" />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-purple-500/5 to-transparent blur-3xl" />
+          <div className="pointer-events-none fixed inset-0 overflow-hidden">
+            <div className="absolute left-[-80px] top-[-40px] h-72 w-72 rounded-full bg-rose-200/70 blur-3xl" />
+            <div className="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-sky-200/70 blur-3xl" />
+            <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-violet-200/70 blur-3xl" />
+          </div>
 
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 opacity-20">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.3) 1px, transparent 0)`,
-                  backgroundSize: '50px 50px'
-                }}
-              />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            {/* Sidebar (fixed on large screens) */}
+            <div className="hidden lg:block">
+              <Navbar />
             </div>
+
+            {/* Main content, leave space for the fixed sidebar on large screens */}
+            <main className="mx-auto max-w-4xl lg:ml-[320px]">
+              <div className="card p-4 sm:p-6 lg:p-8">
+                <Hero />
+                <About />
+                <Education />
+                <Projects />
+                <Stack />
+                <Contact />
+                <Footer />
+              </div>
+            </main>
           </div>
 
-          {/* Content */}
-          <div className="relative z-10">
-            <Navbar />
-            <Hero />
-            <About />
-            <Projects />
-            <Stack />
-            <Contact />
-            <Footer />
-          </div>
-
-          {/* Custom Scrollbar */}
           <style dangerouslySetInnerHTML={{
             __html: `
             ::-webkit-scrollbar {
               width: 8px;
             }
             ::-webkit-scrollbar-track {
-              background: rgba(0, 0, 0, 0.1);
+              background: rgba(15, 23, 42, 0.08);
             }
             ::-webkit-scrollbar-thumb {
-              background: linear-gradient(180deg, #8b5cf6, #06b6d4);
-              border-radius: 4px;
+              background: linear-gradient(180deg, #8b7ae8, #7bb8d8);
+              border-radius: 999px;
             }
             ::-webkit-scrollbar-thumb:hover {
-              background: linear-gradient(180deg, #7c3aed, #0891b2);
+              background: linear-gradient(180deg, #7564d8, #67a9ca);
             }
           `}} />
         </motion.div>
