@@ -4,31 +4,47 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: "WEEB's Solutions",
+      description:
+        'Site institucional desenvolvido para uma empresa de tecnologia, com design moderno, identidade visual própria, animações, responsividade e foco em apresentar serviços digitais de forma profissional.',
+      tech: [
+        'React',
+        'TypeScript',
+        'TailwindCSS',
+        'Framer Motion',
+        'EmailJS',
+        'Vercel',
+      ],
+      status: 'Em produção',
+      github: 'https://github.com/devbyenzo/site-weebs',
+      demo: 'https://weebssolutions.com.br/',
+    },
+    {
+      title: 'Quinta do Olivardo',
+      description:
+        'Aplicação web empresarial desenvolvida para gerenciamento de avaliações de clientes, com integração entre frontend e backend, armazenamento seguro de dados e painel para acompanhamento das informações.',
+      tech: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'NeonDB'],
+      status: 'Em produção',
+      github: null,
+      demo: null,
+    },
+    {
+      title: 'GymManager',
+      description:
+        'Sistema de gerenciamento de academias, com funcionalidades para controle de alunos, planos, pagamentos e relatórios. Desenvolvido com foco em experiência do usuário e eficiência operacional.',
+      tech: ['React', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
+      status: 'Em produção',
+      github: 'https://github.com/devbyenzo/GymManager',
+      demo: 'https://gymmanager-app.vercel.app/',
+    },
+    {
       title: 'Luna Bot',
       description:
-        'Bot de comunidade com automações, economia, níveis e painel de gestão integrado para oferecer uma experiência mais rica e organizada.',
-      tech: ['Python', 'FastAPI', 'React', 'Discord.py'],
+        'Sistema Full Stack para gerenciamento de comunidades, combinando um bot em Python com uma API e painel web administrativo. Possui automações, economia virtual, sistema de níveis e gerenciamento de usuários.',
+      tech: ['Python', 'Discord.py', 'FastAPI', 'React', 'SQLite'],
       status: 'Em produção',
       github: 'https://github.com/devbyenzo/lunabot-showcase',
       demo: 'https://lunabot-617.pages.dev/',
-    },
-    {
-      title: 'API sistema avaliação',
-      description:
-        'API REST para processamento e organização de avaliações com arquitetura limpa, endpoints bem definidos e foco em escalabilidade.',
-      tech: ['Python', 'FastAPI', 'SQLite', 'Render'],
-      status: 'Em evolução',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Pokedex Interativa',
-      description:
-        'Aplicação web para consulta e exploração de dados de Pokémon com interface responsiva e experiência fluida.',
-      tech: ['Python', 'Requests', 'PokéAPI', 'Tkinter'],
-      status: 'Concluído',
-      github: 'https://github.com/devbyenzo/PyDex',
-      demo: '#',
     },
   ];
 

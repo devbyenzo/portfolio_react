@@ -70,7 +70,7 @@ const Hero = () => {
           "
           >
             <Sparkles size={14} />
-            Atualmente desenvolvendo um projeto de automação modernoQue e
+            Atualmente desenvolvendo um projeto de automação moderno
           </div>
 
           <h1
