@@ -2,51 +2,66 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "WEEB's Solutions",
-      description:
-        'Site institucional desenvolvido para uma empresa de tecnologia, com design moderno, identidade visual própria, animações, responsividade e foco em apresentar serviços digitais de forma profissional.',
-      tech: [
-        'React',
-        'TypeScript',
-        'TailwindCSS',
-        'Framer Motion',
-        'EmailJS',
-        'Vercel',
-      ],
-      status: 'Em produção',
-      github: 'https://github.com/devbyenzo/site-weebs',
-      demo: 'https://weebssolutions.com.br/',
-    },
-    {
-      title: 'Quinta do Olivardo',
-      description:
-        'Aplicação web empresarial desenvolvida para gerenciamento de avaliações de clientes, com integração entre frontend e backend, armazenamento seguro de dados e painel para acompanhamento das informações.',
-      tech: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'NeonDB'],
-      status: 'Em produção',
-      github: null,
-      demo: null,
-    },
-    {
-      title: 'GymManager',
-      description:
-        'Sistema de gerenciamento de academias, com funcionalidades para controle de alunos, planos, pagamentos e relatórios. Desenvolvido com foco em experiência do usuário e eficiência operacional.',
-      tech: ['React', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
-      status: 'Em produção',
-      github: 'https://github.com/devbyenzo/GymManager',
-      demo: 'https://gymmanager-app.vercel.app/',
-    },
-    {
-      title: 'Luna Bot',
-      description:
-        'Sistema Full Stack para gerenciamento de comunidades, combinando um bot em Python com uma API e painel web administrativo. Possui automações, economia virtual, sistema de níveis e gerenciamento de usuários.',
-      tech: ['Python', 'Discord.py', 'FastAPI', 'React', 'SQLite'],
-      status: 'Em produção',
-      github: 'https://github.com/devbyenzo/lunabot-showcase',
-      demo: 'https://lunabot-617.pages.dev/',
-    },
-  ];
+ const projects = [
+  {
+    title: 'GymManager',
+    description:
+      'Template completo para sistema de gerenciamento de academias, desenvolvido com foco em UI/UX, arquitetura de interfaces e escalabilidade. O projeto simula um painel administrativo moderno para futuras integrações com backend.',
+    tech: [
+      'React',
+      'TypeScript',
+      'TailwindCSS',
+      'Java',
+      'Spring Boot',
+      'PostgreSQL',
+    ],
+    status: 'Template',
+    github: 'https://github.com/devbyenzo/GymManager',
+    demo: 'https://gymmanager-app.vercel.app/',
+  },
+  {
+    title: 'Daniela Feijó Psicologia',
+    description:
+      'Landing Page desenvolvida para uma psicóloga, com foco em apresentação profissional, informações sobre atendimento, contato via WhatsApp e experiência responsiva para todos os dispositivos.',
+    tech: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+    ],
+    status: 'Em produção',
+    github: null,
+    demo: 'https://www.danielafeijopsicologia.com.br/',
+  },
+  {
+    title: 'Academia Mazze',
+    description:
+      'Landing Page institucional criada para uma academia, apresentando modalidades, estrutura, horários e canais de contato através de um layout moderno e otimizado para conversão de novos alunos.',
+    tech: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+    ],
+    status: 'Em produção',
+    github: null,
+    demo: 'https://academiamazze.com.br/',
+  },
+  {
+    title: "WEEB's Solutions",
+    description:
+      'Website institucional da WEEB\'s Solutions, desenvolvido para apresentar a empresa, seus serviços, diferenciais e portfólio utilizando uma interface moderna, animações suaves e design responsivo.',
+    tech: [
+      'React',
+      'TypeScript',
+      'TailwindCSS',
+      'Framer Motion',
+      'EmailJS',
+      'Vercel',
+    ],
+    status: 'Em produção',
+    github: 'https://github.com/devbyenzo/site-weebs',
+    demo: 'https://weebssolutions.com.br/',
+  },
+];
 
   return (
     <section

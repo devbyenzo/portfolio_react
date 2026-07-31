@@ -68,10 +68,7 @@ const Hero = () => {
             items-center
             gap-2
           "
-          >
-            <Sparkles size={14} />
-            Atualmente desenvolvendo um projeto de automação moderno
-          </div>
+          ></div>
 
           <h1
             className="
@@ -207,6 +204,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Card Projeto */}
+        {/* Card Projeto */}
         <motion.div
           initial={{
             opacity: 0,
@@ -221,184 +219,157 @@ const Hero = () => {
             delay: 0.15,
           }}
           className="
-            rounded-[28px]
-
-            border
-            border-black/5
-
-            bg-[#FFFFFF]
-
-            p-5
-
-            shadow-xl
-          "
+    rounded-[28px]
+    border
+    border-black/5
+    bg-[#FFFFFF]
+    p-5
+    shadow-xl
+  "
         >
           <div
             className="
-            flex
-            items-center
-            justify-between
-          "
+      flex
+      items-center
+      justify-between
+    "
           >
             <p
               className="
-              text-sm
-              font-semibold
-              text-[#212121]
-            "
+        text-sm
+        font-semibold
+        text-[#212121]
+      "
             >
-              Projeto atual
+              Disponibilidade
             </p>
 
             <span
               className="
-                rounded-full
-
-                bg-[#F9F8F0]
-
-                px-3
-
-                py-1
-
-                text-xs
-
-                font-semibold
-
-                uppercase
-
-                tracking-[0.25em]
-
-                text-[#212121]
-              "
+        rounded-full
+        bg-[#F9F8F0]
+        px-3
+        py-1
+        text-xs
+        font-semibold
+        uppercase
+        tracking-[0.25em]
+        text-[#212121]
+      "
             >
-              Em desenvolvimento
+              Aberto a projetos
             </span>
           </div>
 
           <h2
             className="
-              mt-4
-
-              text-2xl
-
-              font-semibold
-
-              text-[#212121]
-            "
+      mt-4
+      text-2xl
+      font-semibold
+      text-[#212121]
+    "
           >
-            Plataforma de automação e gestão
+            Vamos construir algo incrível?
           </h2>
 
           <p
             className="
-              mt-3
-
-              text-sm
-
-              leading-7
-
-              text-[#6B6B6B]
-            "
+      mt-3
+      text-sm
+      leading-7
+      text-[#6B6B6B]
+    "
           >
-            Uma solução pensada para combinar backend sólido, painel intuitivo e
-            experiência premium para o usuário final.
+            Atualmente não estou focado em um projeto pessoal específico. Estou
+            disponível para desenvolver sites, sistemas e soluções sob medida,
+            transformando ideias em produtos modernos e funcionais.
           </p>
 
           <div
             className="
-              mt-5
-
-              space-y-3
-
-              rounded-[24px]
-
-              border
-
-              border-black/5
-
-              bg-[#F9F8F0]
-
-              p-4
-            "
+      mt-5
+      space-y-3
+      rounded-[24px]
+      border
+      border-black/5
+      bg-[#F9F8F0]
+      p-4
+    "
           >
             <div
               className="
-              flex
-              justify-between
-              text-sm
-              text-[#6B6B6B]
-            "
+        flex
+        justify-between
+        text-sm
+        text-[#6B6B6B]
+      "
             >
-              <span>Foco principal</span>
+              <span>Especialidade</span>
 
               <span
                 className="
-                font-semibold
-                text-[#212121]
-              "
+          font-semibold
+          text-[#212121]
+        "
               >
-                UX + arquitetura
+                Landing Pages & Sistemas
               </span>
             </div>
 
             <div
               className="
-              flex
-              justify-between
-              text-sm
-              text-[#6B6B6B]
-            "
+        flex
+        justify-between
+        text-sm
+        text-[#6B6B6B]
+      "
             >
-              <span>Stack central</span>
+              <span>Stack</span>
 
               <span
                 className="
-                font-semibold
-                text-[#212121]
-              "
+          font-semibold
+          text-[#212121]
+        "
               >
-                Python / React
+                React • TypeScript • Python
               </span>
             </div>
           </div>
 
           <div
             className="
-              mt-5
-
-              rounded-[24px]
-
-              bg-[#212121]
-
-              p-4
-
-              text-[#F9F8F0]
-            "
+      mt-5
+      rounded-[24px]
+      bg-[#212121]
+      p-4
+      text-[#F9F8F0]
+    "
           >
             <p
               className="
-              text-xs
-              uppercase
-              tracking-[0.3em]
-              opacity-50
-            "
+        text-xs
+        uppercase
+        tracking-[0.3em]
+        opacity-50
+      "
             >
-              Status
+              Disponibilidade
             </p>
 
             <pre
               className="
-              mt-3
-              overflow-x-auto
-              font-mono
-              text-sm
-              leading-7
-            "
+        mt-3
+        overflow-x-auto
+        font-mono
+        text-sm
+        leading-7
+      "
             >
-              {`const currentFocus = {
-  product: "Automation platform",
-  status: "Design + development",
-  nextStep: "Polish experience"
+              {`const availability = {
+  status: "Available",
+  focus: "New projects",
+  contact: "Let's build together"
 };`}
             </pre>
           </div>

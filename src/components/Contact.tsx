@@ -32,8 +32,16 @@ const Contact = () => {
       label: 'Instagram',
       href: 'https://instagram.com/enzwq_',
     },
-    { icon: MessageCircle, label: 'WhatsApp', href: 'tel:+5511975292277' },
-    { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/devbyenzo/' }
+    {
+      icon: MessageCircle,
+      label: 'WhatsApp',
+      href: 'tel:+5511975292277',
+    },
+    {
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/devbyenzo/',
+    },
   ];
 
   return (
@@ -45,14 +53,12 @@ const Contact = () => {
         viewport={{ once: true }}
         className="mb-10"
       >
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-violet-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#6B6B6B]">
           Contato
         </p>
-        <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
-          Vamos criar algo{' '}
-          <span className="bg-gradient-to-r from-violet-600 to-sky-600 bg-clip-text text-transparent">
-            interessante juntos
-          </span>
+
+        <h2 className="mt-3 text-3xl font-semibold text-[#212121] sm:text-4xl">
+          Vamos criar algo <span>interessante juntos</span>
         </h2>
       </motion.div>
 
@@ -62,19 +68,21 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="rounded-[28px] border border-slate-200/80 bg-white/80 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)] sm:p-8"
+          className="rounded-[28px] border border-black/5 bg-[#FFFFFF] p-6 shadow-xl sm:p-8"
         >
-          <h3 className="text-xl font-semibold text-slate-900">
+          <h3 className="text-xl font-semibold text-[#212121]">
             Envie uma mensagem
           </h3>
+
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div>
               <label
                 htmlFor="name"
-                className="mb-2 block text-sm font-medium text-slate-700"
+                className="mb-2 block text-sm font-medium text-[#6B6B6B]"
               >
                 Nome
               </label>
+
               <input
                 type="text"
                 id="name"
@@ -82,17 +90,19 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-300 focus:outline-none"
                 placeholder="Seu nome"
+                className="w-full rounded-2xl border border-black/5 bg-[#F9F8F0] px-4 py-3 text-sm text-[#212121] placeholder:text-[#6B6B6B] focus:border-[#212121]/20 focus:outline-none"
               />
             </div>
+
             <div>
               <label
                 htmlFor="email"
-                className="mb-2 block text-sm font-medium text-slate-700"
+                className="mb-2 block text-sm font-medium text-[#6B6B6B]"
               >
                 Email
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -100,33 +110,36 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-300 focus:outline-none"
                 placeholder="seu@email.com"
+                className="w-full rounded-2xl border border-black/5 bg-[#F9F8F0] px-4 py-3 text-sm text-[#212121] placeholder:text-[#6B6B6B] focus:border-[#212121]/20 focus:outline-none"
               />
             </div>
+
             <div>
               <label
                 htmlFor="message"
-                className="mb-2 block text-sm font-medium text-slate-700"
+                className="mb-2 block text-sm font-medium text-[#6B6B6B]"
               >
                 Mensagem
               </label>
+
               <textarea
                 id="message"
                 name="message"
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={5}
-                className="w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-300 focus:outline-none"
                 placeholder="Conte-me sobre seu projeto..."
+                className="w-full resize-none rounded-2xl border border-black/5 bg-[#F9F8F0] px-4 py-3 text-sm text-[#212121] placeholder:text-[#6B6B6B] focus:border-[#212121]/20 focus:outline-none"
               />
             </div>
+
             <motion.button
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex items-center gap-2 rounded-full bg-[#212121] px-5 py-3 text-sm font-semibold text-[#F9F8F0] transition hover:bg-[#2D2D2D]"
             >
               <Send size={16} />
               Enviar mensagem
@@ -139,21 +152,25 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="rounded-[28px] border border-slate-200/80 bg-gradient-to-br from-violet-50 to-sky-50 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)] sm:p-8"
+          className="rounded-[28px] border border-black/5 bg-[#FFFFFF] p-6 shadow-xl sm:p-8"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#6B6B6B]">
             Conecte-se
           </p>
-          <h3 className="mt-3 text-2xl font-semibold text-slate-900">
+
+          <h3 className="mt-3 text-2xl font-semibold text-[#212121]">
             Disponível para projetos, freelas e oportunidades.
           </h3>
-          <p className="mt-4 text-base leading-8 text-slate-600">
+
+          <p className="mt-4 text-base leading-8 text-[#6B6B6B]">
             Se você quer transformar uma ideia em uma experiência digital
             moderna, pode falar comigo.
           </p>
+
           <div className="mt-6 flex flex-wrap gap-3">
             {socialLinks.map((social) => {
               const Icon = social.icon;
+
               return (
                 <motion.a
                   key={social.label}
@@ -161,7 +178,7 @@ const Contact = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
+                  className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-[#F9F8F0] px-4 py-2 text-sm font-medium text-[#212121] transition-colors hover:bg-[#212121] hover:text-[#F9F8F0]"
                 >
                   <Icon size={16} />
                   {social.label}
@@ -170,16 +187,17 @@ const Contact = () => {
             })}
           </div>
 
-          <div className="mt-8 space-y-3 rounded-[24px] border border-slate-200/80 bg-white/70 p-5">
+          <div className="mt-8 space-y-3 rounded-[24px] border border-black/5 bg-[#F9F8F0] p-5">
             <div className="flex items-center gap-3">
-              <Mail size={18} className="text-violet-700" />
-              <span className="text-sm text-slate-700">
+              <Mail size={18} className="text-[#212121]" />
+              <span className="text-sm text-[#6B6B6B]">
                 enzwzz.dev@gmail.com
               </span>
             </div>
+
             <div className="flex items-center gap-3">
-              <MessageCircle size={18} className="text-sky-700" />
-              <span className="text-sm text-slate-700">
+              <MessageCircle size={18} className="text-[#212121]" />
+              <span className="text-sm text-[#6B6B6B]">
                 +55 (11) 97529-2277
               </span>
             </div>
