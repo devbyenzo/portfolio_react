@@ -29,7 +29,7 @@ const Projects = () => {
       'JavaScript',
     ],
     status: 'Em produção',
-    github: null,
+    github: "#",
     demo: 'https://www.danielafeijopsicologia.com.br/',
   },
   {
@@ -42,7 +42,7 @@ const Projects = () => {
       'JavaScript',
     ],
     status: 'Em produção',
-    github: null,
+    github: "#",
     demo: 'https://academiamazze.com.br/',
   },
   {
