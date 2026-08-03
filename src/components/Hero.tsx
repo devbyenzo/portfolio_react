@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Github, Sparkles } from 'lucide-react';
-
+import { ArrowRight, Code2, Github,  } from 'lucide-react';
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
