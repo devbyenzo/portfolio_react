@@ -1,360 +1,203 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import gymManagerImage from '../assets/projects/gymmanager.png';
+import danielaImage from '../assets/projects/daniela-feijo-psicologia.png';
+import weebsImage from '../assets/projects/weebs-solutions.png';
 
-const Projects = () => {
- const projects = [
+type Project = {
+  title: string;
+  kind: string;
+  description: string;
+  problem: string;
+  solution: string;
+  tech: string[];
+  demo?: string;
+  github?: string;
+  art?: 'fitness';
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+};
+
+const projects: Project[] = [
   {
     title: 'GymManager',
+    kind: 'Template de produto',
     description:
-      'Template completo para sistema de gerenciamento de academias, desenvolvido com foco em UI/UX, arquitetura de interfaces e escalabilidade. O projeto simula um painel administrativo moderno para futuras integrações com backend.',
-    tech: [
-      'React',
-      'TypeScript',
-      'TailwindCSS',
-      'Java',
-      'Spring Boot',
-      'PostgreSQL',
-    ],
-    status: 'Template',
+      'Template para um sistema de gerenciamento de academias, com foco em UI/UX, arquitetura de interfaces e escalabilidade.',
+    problem:
+      'Reunir a gestão de uma academia em uma interface administrativa clara.',
+    solution:
+      'Painel administrativo de demonstração, pensado para futuras integrações com backend.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Java', 'Spring Boot', 'PostgreSQL'],
     github: 'https://github.com/devbyenzo/GymManager',
     demo: 'https://gymmanager-app.vercel.app/',
+    image: gymManagerImage,
+    imageAlt: 'Captura de tela da página inicial do GymManager, com painel de gestão e destaque para funcionalidades da plataforma.',
+    imageWidth: 1152,
+    imageHeight: 768,
   },
   {
     title: 'Daniela Feijó Psicologia',
+    kind: 'Site profissional',
     description:
-      'Landing Page desenvolvida para uma psicóloga, com foco em apresentação profissional, informações sobre atendimento, contato via WhatsApp e experiência responsiva para todos os dispositivos.',
-    tech: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-    ],
-    status: 'Em produção',
-    github: "#",
+      'Landing page para apresentar a profissional, os atendimentos e os canais de contato em uma experiência responsiva.',
+    problem:
+      'Apresentar informações profissionais e de atendimento de forma acessível.',
+    solution:
+      'Página institucional com apresentação, informações sobre atendimento e contato via WhatsApp.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
     demo: 'https://www.danielafeijopsicologia.com.br/',
+    image: danielaImage,
+    imageAlt: 'Captura de tela do site Daniela Feijó Psicologia, com apresentação profissional e informações do consultório.',
+    imageWidth: 1029,
+    imageHeight: 768,
   },
   {
     title: 'Academia Mazze',
+    kind: 'Site institucional',
     description:
-      'Landing Page institucional criada para uma academia, apresentando modalidades, estrutura, horários e canais de contato através de um layout moderno e otimizado para conversão de novos alunos.',
-    tech: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-    ],
-    status: 'Em produção',
-    github: "#",
+      'Landing page institucional com modalidades, estrutura, horários e canais de contato.',
+    problem:
+      'Organizar as informações da academia em um ponto de entrada para novos alunos.',
+    solution:
+      'Página responsiva que reúne informações sobre a academia e seus canais de contato.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
     demo: 'https://academiamazze.com.br/',
+    art: 'fitness',
   },
   {
     title: "WEEB's Solutions",
+    kind: 'Website institucional',
     description:
-      'Website institucional da WEEB\'s Solutions, desenvolvido para apresentar a empresa, seus serviços, diferenciais e portfólio utilizando uma interface moderna, animações suaves e design responsivo.',
-    tech: [
-      'React',
-      'TypeScript',
-      'TailwindCSS',
-      'Framer Motion',
-      'EmailJS',
-      'Vercel',
-    ],
-    status: 'Em produção',
+      'Website para apresentar a empresa, seus serviços, diferenciais e portfólio.',
+    problem:
+      'Apresentar a empresa e comunicar seus serviços e trabalhos em um só lugar.',
+    solution:
+      'Experiência institucional responsiva com animações suaves e apresentação do portfólio.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'EmailJS', 'Vercel'],
     github: 'https://github.com/devbyenzo/site-weebs',
     demo: 'https://weebssolutions.com.br/',
+    image: weebsImage,
+    imageAlt: 'Captura de tela da página inicial da WEEB’s Solutions, com apresentação de serviços de sistemas, sites e automações.',
+    imageWidth: 1019,
+    imageHeight: 768,
   },
 ];
 
+function ProjectArtwork({ project }: { project: Project }) {
   return (
-    <section
-      id="projects"
-      className="
-        scroll-mt-24
-        py-16
-
-        sm:py-20
-
-        lg:py-24
-      "
+    <div
+      className={`project-art${project.art ? ` project-art--${project.art}` : ''}${project.image ? ' project-art--screenshot' : ''}`}
     >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 30,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.7,
-        }}
-        viewport={{
-          once: true,
-        }}
-        className="mb-10"
-      >
-        <p
-          className="
-            text-sm
-            font-semibold
-            uppercase
-            tracking-[0.35em]
-
-            text-[#6B6B6B]
-          "
+      {project.image ? (
+        <img
+          className="project-screenshot"
+          src={project.image}
+          alt={project.imageAlt}
+          width={project.imageWidth}
+          height={project.imageHeight}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div
+          className="art-browser"
+          role="img"
+          aria-label={`Conceito visual ilustrativo para ${project.title}; não é uma captura do site`}
         >
-          Projetos
-        </p>
+          <div className="art-browser-bar">
+            <span /><span /><span />
+            <span className="art-browser-label">CONCEITO · SEM CAPTURA</span>
+          </div>
+          {project.art === 'fitness' && (
+            <div className="art-fitness">
+              <div className="art-fitness-copy">
+                <span className="art-kicker">MOVIMENTO É VIDA</span>
+                <div className="art-fitness-title">SEU PRÓXIMO<br />PASSO.</div>
+                <span className="art-fitness-cta">CONHEÇA A ACADEMIA ↗</span>
+              </div>
+              <div className="art-fitness-shape"><span>MAZZE</span></div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
-        <h2
-          className="
-            mt-3
+function Projects() {
+  return (
+    <section className="section-wrap content-section projects-section" id="projects">
+      <div className="section-heading">
+        <p className="eyebrow"><span>03</span> PROJETOS SELECIONADOS</p>
+        <span className="section-rule" aria-hidden="true" />
+      </div>
 
-            text-3xl
-
-            font-semibold
-
-            text-[#212121]
-
-            sm:text-4xl
-          "
-        >
-          Trabalhos que unem{' '}
-          <span className="text-[#212121]">funcionalidade e experiência</span>
+      <div className="projects-heading">
+        <h2 className="section-title">
+          Soluções pensadas
+          <br />
+          <span>para sair do papel.</span>
         </h2>
-      </motion.div>
+        <p>
+          Uma seleção de projetos publicados e conceitos de produto. Cada case
+          apresenta seu contexto, abordagem e tecnologias.
+        </p>
+      </div>
 
-      <div
-        className="
-          grid
-          gap-6
-          lg:grid-cols-2
-        "
-      >
+      <div className="projects-list">
         {projects.map((project, index) => (
           <motion.article
+            className={`project-card${index === 0 ? ' project-card--featured' : ''}`}
             key={project.title}
-            initial={{
-              opacity: 0,
-              y: 24,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.08,
-            }}
-            viewport={{
-              once: true,
-            }}
-            whileHover={{
-              y: -6,
-              scale: 1.01,
-            }}
-            className="
-              card
-
-              p-6
-
-            "
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.45, delay: index === 0 ? 0 : 0.04 }}
           >
-            <div
-              className="
-                flex
-                items-start
-                justify-between
-                gap-4
-              "
-            >
-              <div>
-                <p
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-[0.3em]
-
-                    text-[#6B6B6B]
-                  "
-                >
-                  Projeto {index + 1}
-                </p>
-
-                <h3
-                  className="
-                    mt-2
-
-                    text-xl
-
-                    font-semibold
-
-                    text-[#212121]
-                  "
-                >
-                  {project.title}
-                </h3>
+            <ProjectArtwork project={project} />
+            <div className="project-copy">
+              <div className="project-overline">
+                <span>{project.kind}</span>
+                <span>0{index + 1}</span>
               </div>
-
-              <span
-                className="
-                  rounded-full
-
-                  bg-[#212121]
-
-                  px-3
-
-                  py-1
-
-                  text-xs
-
-                  font-semibold
-
-                  uppercase
-
-                  tracking-[0.25em]
-
-                  text-[#F9F8F0]
-                "
-              >
-                {project.status}
-              </span>
-            </div>
-
-            <p
-              className="
-                mt-4
-
-                text-sm
-
-                leading-7
-
-                text-[#6B6B6B]
-              "
-            >
-              {project.description}
-            </p>
-
-            <div
-              className="
-                mt-5
-
-                flex
-
-                flex-wrap
-
-                gap-2
-              "
-            >
-              {project.tech.map((tech) => (
-                <span key={tech} className="tech-pill">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div
-              className="
-                mt-6
-
-                flex
-
-                flex-wrap
-
-                gap-3
-              "
-            >
-              <motion.a
-                whileHover={{
-                  scale: 1.02,
-                }}
-                whileTap={{
-                  scale: 0.98,
-                }}
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex
-
-                  items-center
-
-                  gap-2
-
-                  rounded-full
-
-                  border
-                  border-black/10
-
-                  bg-[#FFFFFF]
-
-                  px-4
-
-                  py-2
-
-                  text-sm
-
-                  font-medium
-
-                  text-[#212121]
-
-                  transition
-
-                  hover:bg-[#F9F8F0]
-                "
-              >
-                <Github size={16} />
-                GitHub
-              </motion.a>
-
-              <motion.a
-                whileHover={{
-                  scale: 1.02,
-                }}
-                whileTap={{
-                  scale: 0.98,
-                }}
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex
-
-                  items-center
-
-                  gap-2
-
-                  rounded-full
-
-                  border
-                  border-black/10
-
-                  bg-[#FFFFFF]
-
-                  px-4
-
-                  py-2
-
-                  text-sm
-
-                  font-medium
-
-                  text-[#212121]
-
-                  transition
-
-                  hover:bg-[#F9F8F0]
-                "
-              >
-                <ExternalLink size={16} />
-                Preview
-              </motion.a>
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-context">
+                <div>
+                  <span className="project-context-label">DESAFIO</span>
+                  <p>{project.problem}</p>
+                </div>
+                <div>
+                  <span className="project-context-label">ABORDAGEM</span>
+                  <p>{project.solution}</p>
+                </div>
+              </div>
+              <ul className="tech-list" aria-label="Tecnologias utilizadas">
+                {project.tech.map((technology) => (
+                  <li key={technology}>{technology}</li>
+                ))}
+              </ul>
+              <div className="project-links">
+                {project.demo && (
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                    Ver projeto <ExternalLink size={15} aria-hidden="true" />
+                  </a>
+                )}
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    Repositório <Github size={15} aria-hidden="true" />
+                  </a>
+                )}
+              </div>
             </div>
           </motion.article>
         ))}
       </div>
     </section>
   );
-};
+}
 
 export default Projects;
