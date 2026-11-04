@@ -1,8 +1,9 @@
 # Enzo — Portfolio
 
 Portfólio pessoal de Enzo (enzwq_), construído com React, TypeScript e Vite.
-A interface usa uma identidade dark premium minimalista, com tipografia Inter e
-Manrope, detalhes em areia e layouts responsivos.
+A interface segue a referência visual enviada: fundo escuro texturizado,
+navegação lateral fixa, painéis discretos e layouts responsivos, com alternância
+entre os temas escuro e claro.
 
 ## Executar localmente
 
@@ -45,7 +46,12 @@ Edite os componentes em `src/components/`. Os projetos, descrições, tecnologia
 e links estão no início de `Projects.tsx`. As capturas reais de GymManager,
 Daniela Feijó Psicologia e WEEB's Solutions ficam em `src/assets/projects/`.
 Academia Mazze usa um conceito visual CSS, identificado como ilustração, pois
-uma captura do projeto não foi fornecida.
+uma captura do projeto não foi fornecida. As capturas dos projetos são
+redimensionadas para caber nos quadros sem cortes, e a foto do perfil do GitHub
+usada na apresentação fica em `src/assets/github-avatar.jpg`.
+
+A formação em Engenharia de Software em andamento está descrita em `About.tsx`
+e no cartão de apresentação em `Hero.tsx`.
 
 Os links de contato atuais são configurados em `Contact.tsx`. A mensagem por
 e-mail usa `mailto:`; não há formulário ou serviço de envio configurado. A

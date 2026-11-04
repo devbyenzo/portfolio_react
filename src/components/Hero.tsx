@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import githubAvatar from '../assets/github-avatar.jpg';
 
 function Hero() {
   return (
@@ -12,19 +13,19 @@ function Hero() {
       >
         <p className="eyebrow hero-eyebrow">
           <span className="availability-dot" />
-          SOFTWARE DEVELOPER <span className="eyebrow-divider">/</span> ENZO
+          ENZO PIETRANTONIO <span className="eyebrow-divider">/</span> SOFTWARE DEVELOPER
         </p>
         <h1 id="hero-title">
-          Transformando ideias em{' '}
-          <span className="title-accent">soluções digitais.</span>
+          Construindo produtos digitais
+          <span className="title-accent"> com intenção.</span>
         </h1>
         <p className="hero-description">
-          Desenvolvedor de software focado na construção de aplicações,
-          sistemas e experiências digitais funcionais, modernas e escaláveis.
+          Desenvolvedor de software focado em aplicações web, sistemas e
+          experiências digitais funcionais, do front-end à integração com APIs.
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projects">
-            Explorar projetos <ArrowUpRight size={17} aria-hidden="true" />
+            Ver projetos <ArrowUpRight size={17} aria-hidden="true" />
           </a>
           <a className="button button-quiet" href="#contact">
             Entre em contato
@@ -43,15 +44,24 @@ function Hero() {
           <span className="aside-index">01 / 06</span>
           <span className="aside-status">Disponível para oportunidades</span>
         </div>
-        <div className="hero-monogram" aria-hidden="true">
-          <span>e</span>
-          <span className="monogram-line" />
-          <span>wq_</span>
-        </div>
+        <a
+          className="hero-avatar"
+          href="https://github.com/devbyenzo"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir perfil de Enzo no GitHub"
+        >
+          <img
+            src={githubAvatar}
+            alt="Foto de perfil do GitHub de Enzo Pietrantonio"
+            width={460}
+            height={460}
+          />
+        </a>
         <div className="hero-aside-bottom">
           <div>
-            <p className="aside-label">FOCO</p>
-            <p className="aside-value">Full-stack & soluções digitais</p>
+            <p className="aside-label">FORMAÇÃO</p>
+            <p className="aside-value">Engenharia de Software — cursando</p>
           </div>
           <a href="#about" className="round-link" aria-label="Conheça meu trabalho">
             <ArrowDown size={17} aria-hidden="true" />
@@ -61,7 +71,7 @@ function Hero() {
 
       <div className="hero-bottomline" aria-hidden="true">
         <span>PORTFÓLIO 2026</span>
-        <span>DESIGN · CÓDIGO · SOLUÇÕES</span>
+        <span>DESENVOLVIMENTO · PRODUTO · WEB</span>
       </div>
     </section>
   );

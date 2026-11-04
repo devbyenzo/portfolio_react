@@ -32,7 +32,7 @@ function Stack() {
   return (
     <section className="section-wrap content-section expertise-section" id="expertise">
       <div className="section-heading">
-        <p className="eyebrow"><span>04</span> EXPERTISE</p>
+        <p className="eyebrow"><span>03</span> EXPERTISE</p>
         <span className="section-rule" aria-hidden="true" />
       </div>
 

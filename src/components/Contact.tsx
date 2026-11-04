@@ -30,35 +30,29 @@ function Contact() {
       </div>
 
       <div className="contact-main">
-        <div>
+        <div className="contact-copy">
+          <p className="contact-kicker">TEM UM PROJETO EM MENTE?</p>
           <h2>
-            Vamos construir
-            <br />
-            algo <span>relevante?</span>
+            Vamos <span>conversar?</span>
           </h2>
           <p>
-            Estou aberto a novas oportunidades, projetos e colaborações. Se
-            você tem uma ideia ou procura alguém para desenvolver sua próxima
-            solução, vamos conversar.
+            Aberto a oportunidades, projetos e boas conversas sobre tecnologia.
           </p>
-          <a className="button button-primary contact-cta" href="mailto:enzwzz.dev@gmail.com">
-            <Mail size={17} aria-hidden="true" />
-            enzwzz.dev@gmail.com
-            <ArrowUpRight size={17} aria-hidden="true" />
-          </a>
         </div>
 
-        <nav className="contact-links" aria-label="Redes sociais">
-          {contactLinks.map((link) => {
+        <nav className="contact-links" aria-label="Canais de contato">
+          <a className="contact-cta" href="mailto:enzwzz.dev@gmail.com">
+            <Mail size={16} aria-hidden="true" />
+            E-mail
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
+          {contactLinks.filter((link) => link.label === 'LinkedIn').map((link) => {
             const Icon = link.icon;
             return (
               <a href={link.href} key={link.label} target="_blank" rel="noopener noreferrer">
-                <span className="contact-link-icon"><Icon size={18} aria-hidden="true" /></span>
-                <span>
-                  <small>{link.label}</small>
-                  <strong>{link.value}</strong>
-                </span>
-                <ArrowUpRight className="contact-link-arrow" size={17} aria-hidden="true" />
+                <Icon size={16} aria-hidden="true" />
+                {link.label}
+                <ArrowUpRight size={15} aria-hidden="true" />
               </a>
             );
           })}

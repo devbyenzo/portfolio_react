@@ -40,7 +40,7 @@ function Experience() {
   return (
     <section className="section-wrap content-section experience-section" id="experience">
       <div className="section-heading">
-        <p className="eyebrow"><span>05</span> EXPERIÊNCIA</p>
+        <p className="eyebrow"><span>04</span> EXPERIÊNCIA</p>
         <span className="section-rule" aria-hidden="true" />
       </div>
 

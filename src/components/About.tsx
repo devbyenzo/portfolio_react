@@ -44,7 +44,8 @@ function About() {
             Sou Enzo, desenvolvedor de software interessado em desenvolvimento
             full-stack, automação de processos, aplicações web e soluções
             tecnológicas. Gosto de entender como as partes se conectam — da
-            primeira interação à lógica que faz tudo funcionar.
+            primeira interação à lógica que faz tudo funcionar. Atualmente,
+            estou cursando Engenharia de Software.
           </p>
           <p>
             Meu objetivo é transformar necessidades em software útil: interfaces

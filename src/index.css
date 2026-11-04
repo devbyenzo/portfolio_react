@@ -1,20 +1,20 @@
 :root {
   font-family: 'Inter', sans-serif;
   color: #f5f5f5;
-  background: #090909;
+  background: #080a0f;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
 
-  --background: #090909;
-  --background-secondary: #111111;
-  --surface: #161616;
-  --border: #252525;
-  --text: #f5f5f5;
-  --muted: #888888;
-  --accent: #b5a18a;
+  --background: #080a0f;
+  --background-secondary: #11141d;
+  --surface: #151925;
+  --border: rgb(203 210 231 / 13%);
+  --text: #edf0f7;
+  --muted: #818797;
+  --accent: #d7d9e3;
 }
 
 * {
@@ -29,7 +29,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background: #080a0f;
 }
 
 body,

@@ -131,7 +131,7 @@ function Projects() {
   return (
     <section className="section-wrap content-section projects-section" id="projects">
       <div className="section-heading">
-        <p className="eyebrow"><span>03</span> PROJETOS SELECIONADOS</p>
+        <p className="eyebrow"><span>05</span> PROJETOS SELECIONADOS</p>
         <span className="section-rule" aria-hidden="true" />
       </div>
 
